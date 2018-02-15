@@ -1,0 +1,12 @@
+.price-total {
+    position: relative;
+    left: 20px;
+    font-weight: 700;
+}
+
+.price-total-detail {
+    position: relative;
+    left: 10px;
+    color: grey;
+    font-weight: 300;
+}

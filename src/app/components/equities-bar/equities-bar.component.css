@@ -1,0 +1,27 @@
+.equity-bar-element {
+    margin-right: 20px;
+    font-size: 0.6em;
+}
+
+.mat-toolbar {
+    background-color: rgba(18, 28, 37, 0.88);
+    height: 48px;
+    /* font-weight: 300; */
+    color: white;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.loss, .gain {
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.loss {
+    border: 1px solid rgba(255,0,0,0.1);
+}
+
+.gain {
+    border: 1px solid rgba(0,255,0,0.1);
+}

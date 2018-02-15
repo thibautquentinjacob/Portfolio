@@ -1,0 +1,25 @@
+.property-key {
+    margin-right: 20px;
+}
+
+.property-value {
+    font-weight: 700;
+}
+
+.current-price {
+    font-size: 1.5em!important;
+}
+
+.diff {
+    font-size: 1.3em!important;
+}
+
+.gain {
+    background-color: #c2f7c2;
+    padding: 5px;
+}
+
+.loss {
+    background-color: #f7c2c2;
+    padding: 5px;
+}

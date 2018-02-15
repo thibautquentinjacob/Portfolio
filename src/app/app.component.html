@@ -1,0 +1,25 @@
+<app-summary-bar></app-summary-bar>
+<app-equities-bar></app-equities-bar>
+
+<div class="container">
+    <mat-tab-group [selectedIndex]='1' (selectedTabChange)="tabChanged($event)">
+        <mat-tab label="Overview">
+            <app-portfolio-chart></app-portfolio-chart>
+            <!-- Portfolio content -->
+            <app-portfolio-content></app-portfolio-content>
+        </mat-tab>
+        <mat-tab label="Portfolio management">
+            <app-lookup-stock></app-lookup-stock>
+            <app-stock-stats></app-stock-stats>
+            <app-stock-chart></app-stock-chart>
+            <app-place-order></app-place-order>
+            <app-order-history></app-order-history>
+            <app-about-company></app-about-company>
+            <app-company-financials></app-company-financials>
+            <app-company-news></app-company-news>
+        </mat-tab>
+        <mat-tab label="Settings">
+
+        </mat-tab>
+    </mat-tab-group>
+</div>

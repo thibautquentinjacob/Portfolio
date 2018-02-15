@@ -1,0 +1,19 @@
+.summary-bar-element {
+    margin-right: 20px;
+    font-size: 0.65em;
+}
+
+.mat-toolbar {
+    background-color: black;
+    color: white;
+    background: linear-gradient(to bottom, #3a3a3a 0%,#2f2f2f 100%);
+    border-bottom: 1px solid #404040;
+    box-shadow: 0 0 2px black;
+    height: 48px;
+}
+
+.market-opening {
+    font-size: 0.65em;
+    position: absolute;
+    right: 10px;
+}

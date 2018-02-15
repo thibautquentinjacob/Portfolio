@@ -1,0 +1,127 @@
+<h3>Financials</h3>
+<mat-card *ngFor="let financial of financials">
+    <mat-card-header>
+        <!-- <img mat-card-avatar src="{{ image }}" alt="Photo of {{ company }}"> -->
+        <mat-card-title>Financial Report</mat-card-title>
+        <mat-card-subtitle>{{ financial.reportDate }}</mat-card-subtitle>
+    </mat-card-header>
+    <!-- <mat-card-subtitle>Apple Inc.</mat-card-subtitle> -->
+    <mat-card-content>
+        <mat-grid-list cols="10:4" rowHeight="20px">
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="Gross profit is the profit a company makes after deducting the costs associated with making and selling its products, or the costs associated with providing its services. Gross profit will appear on a company's income statement, and can be calculated with this formula: Gross profit = Revenue - Cost of Goods Sold" matTooltipPosition="left">Gross Profit:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.grossProfit > 0 ? '' : 'loss'">{{ financial.grossProfit | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="The cost of revenue is the total cost of manufacturing and delivering a product or service." matTooltipPosition="left">Cost of Revenue:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.costOfRevenue > 0 ? '' : 'loss'">{{ financial.costOfRevenue | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="Operating revenue is revenue (sales) generated from a company's day-to-day business activities, which means revenue posted from selling the company’s products and services." matTooltipPosition="left">Operating Revenue:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.operatingRevenue > 0 ? '' : 'loss'">{{ financial.operatingRevenue | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="" matTooltipPosition="left">Total Revenue:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.totalRevenue > 0 ? '' : 'loss'">{{ financial.totalRevenue | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="Operating income is an accounting figure that measures the amount of profit realized from a business's operations, after deducting operating expenses such as cost of goods sold (COGS), wages and depreciation. Operating income takes a company's gross income, which is equivalent to revenue minus COGS, and subtracts all operating expenses and depreciation. A business's operating expenses are costs incurred from operating activities and include items such as office supplies, heat and electricity." matTooltipPosition="left">Operating Income:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.operatingIncome > 0 ? '' : 'loss'">{{ financial.operatingIncome | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="Net income (NI) is a company's total earnings (or profit); net income is calculated by taking revenues and subtracting the costs of doing business such as depreciation, interest, taxes and other expenses. This number appears on a company's income statement and is an important measure of how profitable the company is over a period of time." matTooltipPosition="left">Net Income:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.netIncome > 0 ? '' : 'loss'">{{ financial.netIncome | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="Research and development (R&D) refers to the investigative activities a business conducts to improve existing products and procedures or to lead to the development of new products and procedures." matTooltipPosition="left">R & D:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.researchAndDevelopment > 0 ? '' : 'loss'">{{ financial.researchAndDevelopment | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="An operating expense is an expense a business incurs through its normal business operations. Often abbreviated as OPEX, operating expenses include rent, equipment, inventory costs, marketing, payroll, insurance and funds allocated toward research and development." matTooltipPosition="left">Operating Expense:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.operatingExpense > 0 ? '' : 'loss'">{{ financial.operatingExpense | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="Current assets is a balance sheet account that represents the value of all assets that can reasonably expect to be converted into cash within one year. Current assets include cash and cash equivalents, accounts receivable, inventory, marketable securities, prepaid expenses. and other liquid assets that can be readily converted to cash." matTooltipPosition="left">Current Assets:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.currentAssets > 0 ? '' : 'loss'">{{ financial.currentAssets | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="" matTooltipPosition="left">Total Assets:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.totalAssets > 0 ? '' : 'loss'">{{ financial.totalAssets | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="Total liabilities refer to the aggregate of all debts an individual or company is liable for and can be easily calculated by summing all short-term and long-term liabilities, along with any off balance sheet liabilities that corporations may incur. On the balance sheet, total liabilities plus equity must equal total assets, and a company's total liabilities can be split up into three basic parts: short-term, long-term, and other liabilities." matTooltipPosition="left">Total Liabalities:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.totalLiabilities > 0 ? '' : 'loss'">{{ financial.totalLiabilities | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="" matTooltipPosition="left">Current Cash:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.currentCash > 0 ? '' : 'loss'">{{ financial.currentCash | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="Current liabilities are a company's debts or obligations that are due within one year, appearing on the company's balance sheet and include short term debt, accounts payable, accrued liabilities and other debts." matTooltipPosition="left">Current Debt:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.currentDebt > 0 ? '' : 'loss'">{{ financial.currentDebt | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="" matTooltipPosition="left">Total Cash:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.totalCash > 0 ? '' : 'loss'">{{ financial.totalCash | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="" matTooltipPosition="left">Total Debt:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.totalDebt > 0 ? '' : 'loss'">{{ financial.totalDebt | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="Shareholders' equity is equal to a firm's total assets minus its total liabilities and is one of the most common financial metrics employed by analysts to determine the financial health of a company. Shareholders' equity represents the net value of a company, or the amount that would be returned to shareholders if all the company's assets were liquidated and all its debts repaid." matTooltipPosition="left">Shareholders' Equity:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.shareholderEquity > 0 ? '' : 'loss'">{{ financial.shareholderEquity | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="" matTooltipPosition="left">Cash Change:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.cashChange > 0 ? '' : 'loss'">{{ financial.cashChange | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="Cash flow is the net amount of cash and cash-equivalents moving into and out of a business. Positive cash flow indicates that a company's liquid assets are increasing, enabling it to settle debts, reinvest in its business, return money to shareholders, pay expenses and provide a buffer against future financial challenges. Negative cash flow indicates that a company's liquid assets are decreasing." matTooltipPosition="left">Cash Flow:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.cashFlow > 0 ? '' : 'loss'">{{ financial.cashFlow | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-key" matTooltip="Gains and losses are the opposite financial results occurring through a company's nonprimary operations and production processes. Any time a company produces profit or realizes increased value through secondary sources, such as lawsuits, investments or disposal of assets, it is called a gain. Conversely, a loss is realized whenever a company loses money through secondary activity. If a company sells an asset, the determination of gain versus loss is dependent on the book value of the asset according to the company's financial documents." matTooltipPosition="left">Gains & Losses:</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="property-value" [ngClass]="financial.operatingGainsLosses > 0 ? '' : 'loss'">{{ financial.operatingGainsLosses | billion: '1.0-0' }}</span>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,186 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css" */
+body {
+    /* background: #2f2f2f; */
+    font-size: 0.8em;
+    margin: 0;
+}
+
+/* .mat-card {
+    border: 1px solid #ffffff1c;
+} */
+
+.loss, .sell {
+    color: #d84646!important;
+}
+
+.gain, .buy {
+    color: #64b964!important;
+}
+
+.gain {
+    background-color: #00ff002d;
+    padding: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 5px;
+}
+
+.loss {
+    background-color: #ff00003b;
+    padding: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 5px;
+}
+
+h3 {
+    color: #14425f;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+.mat-cell {
+    font-size: 0.9em!important;
+}
+
+.mat-header-cell {
+    color: white!important;
+}
+
+.mat-header-row {
+    background-color: #131313;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3c4a56),to(#162f44));
+    background: linear-gradient(to bottom, #3c4a56 0%,#162f44 100%);
+    border: 1px solid rgb(15, 27, 37)!important;
+    color: white;
+    min-height: 32px!important;
+    border-radius: 5px 5px 0 0;
+}
+
+.mat-row {
+    min-height: 32px!important;
+}
+
+.mat-row:hover {
+    background-color: #abbcff33;
+}
+
+.mat-table {
+    border: 1px solid #ababab8c;
+    border-radius: 5px;
+}
+
+.mat-tab-body {
+    padding: 30px!important;
+    /* background-color: #00000014; */
+}
+
+.mat-tab-labels {
+    border-top: 1px solid #444444;
+}
+
+.mat-tab-label {
+    font-size: 1em!important;
+    color: white!important;
+    opacity: 1!important;
+    border-left: 1px solid #42424200;
+    border-right: 1px solid #42424200;
+    border-top: 1px solid #35353500;
+}
+
+.mat-tab-label-active {
+    background-color: #ffffff0a;
+    text-shadow: 0 1px 5px black;
+    border-left: 1px solid #424242;
+    border-right: 1px solid #424242;
+    border-top: 1px solid #353535;
+}
+
+.mat-tab-group.mat-primary .mat-tab-label:not(.mat-tab-disabled):focus {
+    background-color: #ffffff0a!important;
+}
+
+.mat-tab-label-container {
+    background-color: #2d2d2d!important;
+}
+
+.mat-card-content {
+    font-size: 0.9em!important;
+    text-align: justify;
+}
+
+.mat-card {
+    border: 1px solid #ababab8c;
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5)!important; */
+    /* background-color: #293c4c;
+    border: 1px solid #3e3e3e00;
+    color: white;
+    border-radius: 3px; */
+}
+
+.mat-card-header-text {
+    margin: 0!important;
+}
+
+.mat-card-title {
+    font-size: 1em!important;
+    font-weight: 700!important;
+}
+
+.mat-card-subtitle {
+    font-size: 1em!important;
+}
+
+button {
+    border: 1px solid #ababab8c!important;
+    font-size: 1em!important;
+    color: #7a7a7a!important;
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #14425f!important;
+}
+
+.mat-grid-tile .mat-figure {
+    justify-content: baseline!important;
+}
+
+.mat-tooltip {
+    background-color: #fdedaf!important;
+    box-shadow: 2px 2px 5px #d6d6d6;
+    color: black!important;
+    border: 1px solid #c5b987!important;
+    font-size: 0.9em!important;
+}
+
+@keyframes loss-animate {
+    from {background-color: red;}
+    to {background-color: white;}
+}
+
+@keyframes gain-animate {
+    from {background-color: green;}
+    to {background-color: white;}
+}
+
+@keyframes updated-animate {
+    from {color: #14425f}
+    to {color: white}
+}
+
+.loss-animate {
+    animation-name: loss-animate;
+    animation-duration: 2s;
+}
+
+.gain-animate {
+    animation-name: gain-animate;
+    animation-duration: 2s;
+}
+
+.updated-animate {
+    animation-name: updated-animate;
+    animation-duration: 2s;
+}

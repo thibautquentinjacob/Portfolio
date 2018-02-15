@@ -1,0 +1,49 @@
+<h3>Place order</h3>
+
+<app-day-trading-chart></app-day-trading-chart>
+
+<!-- Common form -->
+<mat-form-field>
+    <mat-select placeholder="Order type" [(ngModel)]="order.order" required>
+        <mat-option *ngFor="let order of orders" [value]="order">
+            {{ order | uppercase }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field>
+    <mat-select (change)="computePrice()" placeholder="Action" [(ngModel)]="order.action" required>
+        <mat-option *ngFor="let action of actions" [value]="action">
+            {{ action | uppercase }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field>
+    <input matInput (keyup)="computePrice()"  type="number" placeholder="Volume" pattern="[0-9]*" onkeypress="return event.charCode >= 48 && event.charCode <= 57" value="" [(ngModel)]="order.volume" required>
+</mat-form-field>
+<mat-form-field>
+    <mat-select placeholder="Duration" [(ngModel)]="order.duration" [disabled]="!order.volume" required>
+        <mat-option *ngFor="let durationOrder of durationOrders" value="day">
+            {{ durationOrder | uppercase }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<br>
+
+<!-- Limit and stop orders -->
+<mat-form-field>
+    <input matInput type="number" placeholder="Limit value" [value]="" [(ngModel)]="limit" [disabled]="order.order !== 'limit' && order.order !== 'stop-limit' && order.order !== 'stop-market'">
+</mat-form-field><br>
+
+<!-- Duration orders -->
+<mat-form-field *ngIf="order.duration === 'gtd (good til date)'">
+    <input matInput [matDatepicker]="picker" placeholder="Date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+</mat-form-field>
+<mat-form-field *ngIf="order.duration === 'minute'">
+    <input matInput type="number" placeholder="Minutes" value="" [(ngModel)]="minutes">
+</mat-form-field><br>
+
+<!-- Submit -->
+<button mat-raised-button [disabled]="!order.order || !order.action || (order.volume === 0 || order.volume === null || order.volume < 1 ) || (( order.action === 'buy' && !hasEnoughCash ) || ( order.action === 'sell' && !hasEnoughStocks ))" (click)="placeOrder()">Place order</button>
+<span class="price-total">{{ order.totalCost | currency}}<span *ngIf="order.order && order.action && (order.volume !== 0 && order.volume !== null && order.volume >= 1 )" class="price-total-detail">({{ price | currency }} x {{ order.volume }} + {{ brokerFee | currency }} broker fee)</span></span>

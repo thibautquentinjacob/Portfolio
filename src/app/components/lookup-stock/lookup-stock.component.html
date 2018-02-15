@@ -1,0 +1,12 @@
+<h3>Lookup symbol</h3>
+<mat-form-field class="lookup-form-field">
+    <input matInput placeholder="Symbol" aria-label="Symbol" [matAutocomplete]="auto" [formControl]="symbolCtrl" [(ngModel)]="symbol">
+    <mat-autocomplete #auto="matAutocomplete" md-dropdown-items="6">
+        <mat-option *ngFor="let symbol of filteredSymbols | async" [value]="symbol.symbol">
+            <img style="vertical-align:middle;" aria-hidden src="https://storage.googleapis.com/iex/api/logos/{{ symbol.symbol }}.png" height="25" />
+            <small class="symbol">{{ symbol.symbol }}<strong></strong></small> |
+            <small>{{ symbol.name }}</small>
+        </mat-option>
+    </mat-autocomplete>
+</mat-form-field>
+<button mat-raised-button (click)="lookupSymbol()" [disabled]="!symbol || symbol.length === 0">Lookup</button>

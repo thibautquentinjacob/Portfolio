@@ -1,0 +1,24 @@
+<h3>Latest news</h3>
+<!-- <mat-accordion class="example-headers-align">
+    <mat-expansion-panel *ngFor="let new of news">
+        <mat-expansion-panel-header>
+            <mat-panel-title>{{ new.date }} - {{ new.source }}</mat-panel-title>
+            <mat-panel-description>{{ new.title }}</mat-panel-description>
+        </mat-expansion-panel-header>
+        {{ new.content }}
+    </mat-expansion-panel>
+</mat-accordion> -->
+
+<mat-card *ngFor="let new of news">
+    <mat-card-header>
+        <!-- <img mat-card-avatar src="{{ image }}" alt="Photo of {{ company }}"> -->
+        <mat-card-title>{{ new.title }}</mat-card-title>
+        <mat-card-subtitle>{{ new.date }} - {{ new.source }}</mat-card-subtitle>
+    </mat-card-header>
+    <!-- <mat-card-subtitle>Apple Inc.</mat-card-subtitle> -->
+    <mat-card-content>
+        {{ new.content }}
+        <br><br>
+        <a href="{{ new.link }}" target="_blank">Read the full story</a>
+    </mat-card-content>
+</mat-card>

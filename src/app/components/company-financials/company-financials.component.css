@@ -1,0 +1,19 @@
+.property-key {
+    margin-right: 20px;
+}
+
+.property-value {
+    font-weight: 700;
+}
+
+.hovered {
+    background-color: #aed9ff;
+    padding: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 3px;
+}
+
+.mat-card {
+    margin-bottom: 10px;
+}

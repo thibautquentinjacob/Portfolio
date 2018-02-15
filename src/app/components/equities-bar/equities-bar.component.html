@@ -1,0 +1,4 @@
+<mat-toolbar>
+    <span [hidden]="equities.length > 0" class="equity-bar-element">No equities</span>
+    <span *ngFor="let equity of equities" class="equity-bar-element">{{ equity.symbol }}: {{ equity.currentValue | currency }}<span [ngClass]="equity.diff > 0 ? 'gain' : 'loss'"> ({{ equity.diffPercent | percent: '1.1-3' }})</span></span>
+</mat-toolbar>

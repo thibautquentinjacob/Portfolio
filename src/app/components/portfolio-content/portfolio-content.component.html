@@ -1,0 +1,51 @@
+<h3>Portfolio content</h3>
+<div [hidden]="equities.length === 0">
+    <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+        <ng-container matColumnDef="volume">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Volume </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.volume}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="symbol">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="pricePaid">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Acquired for </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.pricePaid | currency: element.currency}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="value">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Value </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.value | currency: element.currency}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="diff">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Diff </mat-header-cell>
+            <mat-cell *matCellDef="let element" [ngClass]="element.diff > 0 ? 'gain' : 'loss'"> {{element.diff | percent: '1.1-3'}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="totalDiff">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Total Diff </mat-header-cell>
+                <mat-cell *matCellDef="let element" [ngClass]="element.totalDiff > 0 ? 'gain' : 'loss'"> {{element.totalDiff | currency }} </mat-cell>
+            </ng-container>
+
+        <ng-container matColumnDef="totalWorth">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Total Worth </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.totalWorth | currency }} </mat-cell>
+            </ng-container>
+
+        <ng-container matColumnDef="forecast">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Forecast </mat-header-cell>
+            <mat-cell *matCellDef="let element" [ngClass]="element.forecast"> {{element.forecast | uppercase}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
+
+<p [hidden]="equities.length !== 0">
+    No equities has been bought yet, Switch to the 'Portfolio Management' tab to issue orders.
+</p>
