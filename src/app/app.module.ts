@@ -30,7 +30,6 @@ import { CompanyDataService } from './services/company-data.service';
 import { LookupStockComponent } from './components/lookup-stock/lookup-stock.component';
 import { StockStatsComponent } from './components/stock-stats/stock-stats.component';
 import { CompanyFinancialsComponent } from './components/company-financials/company-financials.component';
-import { MillionPipe } from './million.pipe';
 import { BillionPipe } from './billion.pipe';
 import { DecimalPipe } from '@angular/common';
 import { PortfolioChartComponent } from './components/portfolio-chart/portfolio-chart.component';
@@ -51,7 +50,9 @@ import { DayTradingChartComponent } from './components/day-trading-chart/day-tra
     LookupStockComponent,
     StockStatsComponent,
     CompanyFinancialsComponent,
-    MillionPipe, BillionPipe, PortfolioChartComponent, DayTradingChartComponent
+    BillionPipe,
+    PortfolioChartComponent,
+    DayTradingChartComponent
   ],
   imports: [
     BrowserModule, FormsModule,

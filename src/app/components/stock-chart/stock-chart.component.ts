@@ -24,6 +24,7 @@ export class StockChartComponent implements OnInit, AfterViewInit, OnDestroy {
                  private portfolioService: PortfolioService ) {
         portfolioService.loadedSymbolStream.subscribe( symbol => {
             this.symbol = symbol;
+            console.log( 'Updating chart' );
             this.updateChart();
         });
     }

@@ -1,3 +1,10 @@
+// Copyright (c) 2018 thibautjacob
+// 
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
+
+
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
@@ -65,6 +72,7 @@ export class StockDataService {
     }
 
     getStockData( symbol: string ): Observable<any[]> {
+        console.log( 'Requesting data for symbol ' + symbol );
         const stockData: Stock[] = [];
         return this.http.get(
             'https://api.iextrading.com/1.0/stock/' + symbol + '/chart/1y'
