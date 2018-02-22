@@ -1,6 +1,8 @@
 # Portfolio
 
-This tool lets you simulate portfolio management using real trade exchange rates provided through the [IEX API](https://iextrading.com/developer)
+This tool is a stock portfolio management simulation using real stock market data from the [IEX stock exchange API](https://iextrading.com/developer). The tool allows to track stock value evolution, portfolio value evolution and place different types of orders.
+
+[Live demo](http://thibautjacob.com/portfolio)
 
 ## Features
 
